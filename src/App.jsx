@@ -129,7 +129,7 @@ export default function WarpThesis() {
           Your Compliance Calendar Is a Better Activator Than Your Onboarding
         </h1>
         <P style={{ fontSize: 17, marginBottom: 48 }}>
-          Warp has built something rare: a payroll product that founders genuinely love, with support metrics most enterprise companies would envy. This isn't about what's broken. It's about a structural choice that determines how the next 4,000 customers activate.
+          Warp has built a payroll product founders love, with support metrics most enterprise companies can't match. This artifact isn't a critique. It's a question about how the next 4,000 customers activate.
         </P>
         <div style={{ fontFamily: F.sans, fontSize: 14, color: C.dim }}>
           by <span style={{ color: C.muted }}>Sidharth Sundaram</span>
@@ -170,7 +170,7 @@ export default function WarpThesis() {
             tag="Hiring" tagColor={C.green}
             title="Offer Letter Generator"
             jtbd="I need to send a compliant offer letter today"
-            signal="Ungated. The founder is actively hiring — they need payroll imminently, not eventually. Highest urgency, shortest time-to-value expectation."
+            signal="Ungated. The founder is actively hiring. They need payroll now, not eventually."
             aha={"Sent an offer, onboarded the hire, and ran payroll without switching tools."}
             delay={0.2}
           />
@@ -199,7 +199,7 @@ export default function WarpThesis() {
           {[
             { label: "Motivation", color: C.accent, what: "Fear", detail: "Late W-2 = $3.5M. Missed 941 = 5%/mo compounding. One missed deadline = $15K+ for a 50-person startup." },
             { label: "Ability", color: C.yellow, what: "Mental Effort Reduction", detail: "Every filing deadline organized by date, with state-by-state requirements pre-sorted. Reduces the mental effort of tracking 50 states from hours to a single scroll." },
-            { label: "Trigger", color: C.green, what: "Calendar Sync", detail: "\"Add to Google Calendar\" puts Warp's deadlines into the founder's daily workflow. Persistent, passive, perfectly timed." },
+            { label: "Trigger", color: C.green, what: "Calendar Sync", detail: "\"Add to Google Calendar\" puts Warp's deadlines into the founder's daily workflow. A reminder they didn't ask for, showing up right when it matters." },
           ].map((item, i) => (
             <Fade key={i} delay={0.15 * i}>
               <div style={{ background: C.card, border: `1px solid ${C.border}`, borderRadius: 8, padding: "20px 18px" }}>
@@ -280,10 +280,12 @@ export default function WarpThesis() {
                 <div style={{ fontFamily: F.sans, fontSize: 12, color: C.muted, marginBottom: 16 }}>Set up automated compliance in minutes.</div>
                 <FormField text="Work email" />
                 <FormField text="Company name" />
+                <FormField text="Company size" />
                 <div style={{ fontFamily: F.sans, fontSize: 11, color: C.dim, marginTop: 12, marginBottom: 6 }}>How many states do you operate in?</div>
                 <FormField text="Select range" />
                 <div style={{ fontFamily: F.sans, fontSize: 11, color: C.dim, marginBottom: 6 }}>Current payroll provider?</div>
                 <FormField text="Select provider" />
+                <FormField text="Full name" />
                 <div style={{ background: C.glow, border: `1px solid ${C.accent}`, borderRadius: 6, padding: "10px 14px", marginTop: 12 }}>
                   <div style={{ fontFamily: F.sans, fontSize: 12, color: C.accent, fontWeight: 500 }}>Your next deadline: April 30 - Q1 state tax filings</div>
                   <div style={{ fontFamily: F.sans, fontSize: 11, color: C.muted, marginTop: 2 }}>Warp handles this automatically on day one.</div>
@@ -297,6 +299,38 @@ export default function WarpThesis() {
         <Fade delay={0.55}>
           <P style={{ marginTop: 28 }}>
             The left form collects data. The right form continues the conversation. The headline mirrors the calendar's language. The fields are compliance-relevant. The deadline reminder carries the motivation forward. And the UTM parameter means every downstream metric can be segmented by entry point.
+          </P>
+        </Fade>
+
+        <Fade delay={0.6}>
+          <P style={{ marginTop: 12 }}>
+            This isn't specific to the compliance calendar. The same pattern applies to every free tool:
+          </P>
+          <div style={{ background: C.card, border: `1px solid ${C.border}`, borderRadius: 10, padding: "20px", marginTop: 16, overflowX: "auto" }}>
+            <div style={{ minWidth: 520 }}>
+              <div style={{ display: "grid", gridTemplateColumns: "140px 1fr 1fr", gap: 10, padding: "10px 0", borderBottom: `1px solid ${C.borderL}`, marginBottom: 4 }}>
+                {["Tool", "Signal it carries", "Form should ask"].map((h) => (
+                  <div key={h} style={{ fontFamily: F.mono, fontSize: 9, letterSpacing: "0.1em", textTransform: "uppercase", color: C.dim }}>{h}</div>
+                ))}
+              </div>
+              {[
+                { tool: "Compliance Calendar", signal: "Scared of penalties", ask: "How many states? + next deadline" },
+                { tool: "Runway Calculator", signal: "Watching cash burn", ask: "Monthly burn rate? + payroll as % of burn" },
+                { tool: "Equity Calculator", signal: "About to raise and hire", ask: "Hiring post-round? + new states?" },
+                { tool: "Sales Comp Calc", signal: "Building a sales team", ask: "How many reps? + commission structure" },
+                { tool: "Offer Letter Gen", signal: "Hiring right now", ask: "Start date? + which state?" },
+                { tool: "Contractor Agreement", signal: "Has global workers", ask: "How many contractors? + which countries?" },
+              ].map((row, i) => (
+                <div key={i} style={{ display: "grid", gridTemplateColumns: "140px 1fr 1fr", gap: 10, padding: "12px 0", borderBottom: i < 5 ? `1px solid ${C.border}` : "none", alignItems: "start" }}>
+                  <div style={{ fontFamily: F.sans, fontSize: 13, color: C.text }}>{row.tool}</div>
+                  <div style={{ fontFamily: F.sans, fontSize: 12, color: C.muted }}>{row.signal}</div>
+                  <div style={{ fontFamily: F.sans, fontSize: 12, color: C.muted }}>{row.ask}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+          <P style={{ marginTop: 20, fontSize: 14, color: C.dim }}>
+            Six tools, six signals, one generic form. The compliance calendar is the case study. The pattern is the thesis.
           </P>
         </Fade>
       </div>
@@ -457,18 +491,18 @@ export default function WarpThesis() {
 
         <Fade delay={0.1}>
           <P>
-            Warp recently filled the activation role internally. The human work is covered. But the measurement layer — entry-point tagging, segmented graduation criteria, Aha! moment instrumentation — is a different skillset. The underlying question is whether Warp's growth model transitions from people-powered (linear cost per customer) to product-powered (zero marginal cost) before the unit economics at $35/employee force it.
+            Warp recently filled the activation role internally. The human work is covered. But the measurement layer — tracking where customers came from, defining what "activated" means for each segment, and testing whether different onboarding paths work better — is a different skillset. The underlying question is whether Warp's growth model transitions from people-powered (linear cost per customer) to product-powered (zero marginal cost) before the unit economics at $35/employee force it.
           </P>
           <P>
-            This internship runs alongside the activation manager, not instead of them. They provide the supporting actions. The intern builds the instrumentation, segmentation, and experimentation layer underneath — so the product team knows what to automate next.
+            This internship runs alongside the activation manager, not instead of them. They provide the supporting actions. The intern builds the data layer underneath — so the product team knows what to automate next.
           </P>
         </Fade>
 
         <div style={{ marginTop: 32 }}>
           {[
-            { num: "01", title: "Tag", desc: "Carry the entry-point signal from free tools and comparison pages into the qualification form. When a founder clicks 'Get Started' from the compliance calendar, that context should arrive with them. This is a one-line UTM change with a large downstream impact." },
-            { num: "02", title: "Instrument", desc: "Give the activation manager a way to record which Aha! moment each customer reaches first, and how long it takes. Not just 'time to first payroll' but 'time to first quarter without a compliance notice' or 'time to first payroll the founder didn't think about.' Build the segmented scorecard the original JD implied but didn't specify." },
-            { num: "03", title: "Test", desc: "Route compliance-calendar leads into a compliance-first onboarding emphasis. Measure if graduation rate and 90-day retention differ from the generic path. One segment, one experiment, one summer." },
+            { num: "01", title: "Tag", desc: "Carry the entry-point signal from free tools and comparison pages into the qualification form. When a founder clicks 'Get Started' from the compliance calendar, that context should arrive with them. One UTM parameter. Everything downstream becomes segmentable." },
+            { num: "02", title: "Instrument", desc: "Give the activation manager a way to record which Aha! moment each customer reaches first, and how long it takes. Time to first payroll is one metric. Time to first quarter without a compliance notice is another. Build the segmented scorecard the original JD implied but didn't specify." },
+            { num: "03", title: "Test", desc: "Route compliance-calendar leads into a compliance-first onboarding emphasis. Measure if graduation rate and 90-day retention differ from the generic path. One segment, one experiment over the summer." },
           ].map((item, i) => (
             <Fade key={i} delay={0.12 * i}>
               <div style={{ display: "flex", gap: 20, padding: "24px 0", borderBottom: i < 2 ? `1px solid ${C.border}` : "none" }}>
@@ -488,11 +522,11 @@ export default function WarpThesis() {
             <div style={{ fontFamily: F.sans, fontSize: 15, color: C.muted, lineHeight: 1.85 }}>
               <div style={{ marginBottom: 14 }}>
                 <span style={{ color: C.text }}>This artifact is the diagnosis. The work is the iteration.</span>{" "}
-                The Aha! moments above are hypotheses. Validating them requires embedded access to customer data, conversations with the activation manager about where onboarding stalls, and correlation analysis between activation events and 90-day retention. That work can't live in an artifact. It lives in a person on the team.
+                The Aha! moments above are hypotheses. Validating them requires embedded access to customer data, conversations with the activation manager about where onboarding stalls, and checking whether different activation events actually predict who stays at 90 days. That work can't live in an artifact. It lives in a person on the team.
               </div>
               <div style={{ marginBottom: 14 }}>
                 <span style={{ color: C.text }}>The activation manager can't build this while doing the human work.</span>{" "}
-                They're running concurrent onboarding implementations. They need someone whose entire scope is building the measurement layer underneath — so when the playbook is written, the product team knows what to automate next. That's a scoped, time-bound project. An intern is the right-sized investment.
+                They're running concurrent onboarding implementations. They need someone whose entire scope is building the measurement layer underneath — so when the playbook is written, the product team knows what to automate next. That's a scoped, time-bound project. An intern can own it.
               </div>
               <div style={{ marginBottom: 14 }}>
                 <span style={{ color: C.text }}>I've done this work before.</span>{" "}
@@ -500,7 +534,7 @@ export default function WarpThesis() {
               </div>
               <div style={{ marginBottom: 14 }}>
                 <span style={{ color: C.text }}>Deep in this market.</span>{" "}
-                Built a product thesis for Gusto — one of the companies your customers are actively leaving (<a href="https://gusto-pulse.vercel.app" target="_blank" rel="noopener noreferrer" style={{ color: C.accent, textDecoration: "underline", textUnderlineOffset: 3 }}>see it here</a>). Evaluated and turned down a role at another early-stage payroll startup after building their growth strategy. Chose to pitch Warp because the AI-agent architecture is a fundamentally different bet.
+                Built a product thesis for Gusto — one of the companies your customers are actively leaving (<a href="https://gusto-pulse.vercel.app" target="_blank" rel="noopener noreferrer" style={{ color: C.accent, textDecoration: "underline", textUnderlineOffset: 3 }}>see it here</a>). Evaluated and turned down a role at another early-stage payroll startup after building their growth strategy. Chose to pitch Warp because the AI-agent architecture is a different bet entirely.
               </div>
               <div>
                 <span style={{ color: C.text }}>On CPT through Purdue.</span>{" "}
