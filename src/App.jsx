@@ -154,7 +154,7 @@ export default function WarpThesis() {
             tag="Compliance" tagColor={C.accent}
             title="Compliance Calendar"
             jtbd="I cannot miss another filing deadline"
-            signal={"Email-gated. Shows $3.5M max penalties for late W-2s, $15K+ risk for a 50-person startup. Breaks down state-by-state complexity across NY, CA, TX, IL, FL + 46 more. Offers Google Calendar sync that puts Warp's brand in the founder's daily workflow."}
+            signal={"Fully ungated. No email capture. Shows $3.5M max penalties for late W-2s, $15K+ risk for a 50-person startup. Breaks down state-by-state complexity across NY, CA, TX, IL, FL + 46 more. Offers Google Calendar sync that puts Warp's brand in the founder's daily workflow."}
             aha={"First quarter where they didn't think about a single deadline."}
             delay={0}
           />
@@ -341,7 +341,7 @@ export default function WarpThesis() {
 
         <Fade delay={0.3}>
           <P style={{ marginTop: 28 }}>
-            Look at what the CAM JD actually describes: data migration, tax registration setup, bank verification, stakeholder engagement, post-go-live training. In activation framework terms, these are all supporting actions — the steps that enable the core action (first payroll) by providing awareness, discovery, motivation, and ability. For Enterprise customers, delivering these through people makes sense. For startups at $35/employee, the question is which of them can be delivered by product instead.
+            Look at what the activation role's JD described before it was filled internally: data migration, tax registration setup, bank verification, stakeholder engagement, post-go-live training. In activation framework terms, these are all supporting actions — the steps that enable the core action (first payroll) by providing awareness, discovery, motivation, and ability. For Enterprise customers, delivering these through people makes sense. For startups at $35/employee, the question is which of them can be delivered by product instead.
           </P>
           <P>
             The compliance calendar — a free marketing page — accidentally proves it can. Product does motivation, ability, and trigger work at zero marginal cost. The question is whether that principle extends past the marketing site into the actual customer experience for the segments where unit economics demand it.
@@ -350,7 +350,7 @@ export default function WarpThesis() {
 
         <Fade delay={0.35}>
           <Callout>
-            This is not a criticism. People as a lever is the right choice when you are learning what activation looks like, and it remains the right choice for Enterprise and Mid-Market segments. The CAM JD even says "this role owns a playbook that's still being written." But for Startups and Small Business — where the majority of customers sit today — the playbook's insight should transfer from people to product. Otherwise scaling the startup customer base requires proportionally more human attention, and the economics that let Warp undercut Gusto and Rippling on price start to compress.
+            This is not a criticism. People as a lever is the right choice when you are learning what activation looks like, and it remains the right choice for Enterprise and Mid-Market segments. The original JD for this role said "this role owns a playbook that's still being written." But for Startups and Small Business — where the majority of customers sit today — the playbook's insight should transfer from people to product. Otherwise scaling the startup customer base requires proportionally more human attention, and the economics that let Warp undercut Gusto and Rippling on price start to compress.
           </Callout>
         </Fade>
       </div>
@@ -374,7 +374,7 @@ export default function WarpThesis() {
         </Fade>
 
         <Fade delay={0.15}>
-          <P>The CAM's KPIs are time to first payroll and graduation rate. But the JD itself says first payroll is not activation. That tension exists because the Aha! moment is different for each customer segment, and one metric cannot capture all of them:</P>
+          <P>The activation role's KPIs were defined as time to first payroll and graduation rate. But the JD itself said first payroll is not activation. That tension exists because the Aha! moment is different for each customer segment, and one metric cannot capture all of them:</P>
         </Fade>
 
         <div style={{ marginTop: 24 }}>
@@ -410,8 +410,8 @@ export default function WarpThesis() {
         {/* CAM SCORECARD MOCKUP */}
         <Fade delay={0.5}>
           <div style={{ marginTop: 48 }}>
-            <div style={{ fontFamily: F.mono, fontSize: 10, letterSpacing: "0.12em", textTransform: "uppercase", color: C.accent, marginBottom: 8 }}>Proposed / CAM Activation Scorecard</div>
-            <div style={{ fontFamily: F.sans, fontSize: 13, color: C.dim, marginBottom: 20 }}>What the Customer Activation Manager sees when activation is segmented by entry point.</div>
+            <div style={{ fontFamily: F.mono, fontSize: 10, letterSpacing: "0.12em", textTransform: "uppercase", color: C.accent, marginBottom: 8 }}>Proposed / Activation Scorecard</div>
+            <div style={{ fontFamily: F.sans, fontSize: 13, color: C.dim, marginBottom: 20 }}>What the activation manager sees when activation is segmented by entry point.</div>
             <div style={{ background: C.card, border: `1px solid ${C.border}`, borderRadius: 10, padding: "20px", overflowX: "auto" }}>
               <div style={{ minWidth: 580 }}>
                 {/* Header */}
@@ -441,7 +441,7 @@ export default function WarpThesis() {
 
         <Fade delay={0.55}>
           <P style={{ marginTop: 24 }}>
-            The form captures the signal. The scorecard makes it actionable. Instead of one graduation criteria for all customers, the CAM sees different targets for different segments — and the product team gets a feedback loop showing which Aha! moments are hardest to reach.
+            The form captures the signal. The scorecard makes it actionable. Instead of one graduation criteria for all customers, the activation manager sees different targets for different segments — and the product team gets a feedback loop showing which Aha! moments are hardest to reach.
           </P>
         </Fade>
       </div>
@@ -452,22 +452,22 @@ export default function WarpThesis() {
       <div style={{ ...wrap, paddingBottom: 120 }}>
         <Fade>
           <Tag>05 / The Proposal</Tag>
-          <Title>A product growth intern to build the measurement layer the CAM needs.</Title>
+          <Title>The activation role is filled. The measurement layer underneath it isn't.</Title>
         </Fade>
 
         <Fade delay={0.1}>
           <P>
-            The CAM is the right hire — people as a lever is how you learn what activation looks like. But the CAM's output should feed a product-led system, not remain a permanent human dependency. The underlying question is whether Warp's growth model transitions from people-powered (linear cost per customer) to product-powered (zero marginal cost) before the unit economics at $35/employee force it.
+            Warp recently filled the activation role internally. The human work is covered. But the measurement layer — entry-point tagging, segmented graduation criteria, Aha! moment instrumentation — is a different skillset. The underlying question is whether Warp's growth model transitions from people-powered (linear cost per customer) to product-powered (zero marginal cost) before the unit economics at $35/employee force it.
           </P>
           <P>
-            This internship runs alongside the CAM, not instead of them. The CAM provides the supporting actions. The intern builds the instrumentation, segmentation, and experimentation layer underneath — so the product team knows what to automate next.
+            This internship runs alongside the activation manager, not instead of them. They provide the supporting actions. The intern builds the instrumentation, segmentation, and experimentation layer underneath — so the product team knows what to automate next.
           </P>
         </Fade>
 
         <div style={{ marginTop: 32 }}>
           {[
             { num: "01", title: "Tag", desc: "Carry the entry-point signal from free tools and comparison pages into the qualification form. When a founder clicks 'Get Started' from the compliance calendar, that context should arrive with them. This is a one-line UTM change with a large downstream impact." },
-            { num: "02", title: "Instrument", desc: "Give the CAM a way to record which Aha! moment each customer reaches first, and how long it takes. Not just 'time to first payroll' but 'time to first quarter without a compliance notice' or 'time to first payroll the founder didn't think about.' Build the segmented scorecard the JD implies but doesn't specify." },
+            { num: "02", title: "Instrument", desc: "Give the activation manager a way to record which Aha! moment each customer reaches first, and how long it takes. Not just 'time to first payroll' but 'time to first quarter without a compliance notice' or 'time to first payroll the founder didn't think about.' Build the segmented scorecard the original JD implied but didn't specify." },
             { num: "03", title: "Test", desc: "Route compliance-calendar leads into a compliance-first onboarding emphasis. Measure if graduation rate and 90-day retention differ from the generic path. One segment, one experiment, one summer." },
           ].map((item, i) => (
             <Fade key={i} delay={0.12 * i}>
@@ -488,11 +488,11 @@ export default function WarpThesis() {
             <div style={{ fontFamily: F.sans, fontSize: 15, color: C.muted, lineHeight: 1.85 }}>
               <div style={{ marginBottom: 14 }}>
                 <span style={{ color: C.text }}>This artifact is the diagnosis. The work is the iteration.</span>{" "}
-                The Aha! moments above are hypotheses. Validating them requires embedded access to customer data, conversations with the CAM about where onboarding stalls, and correlation analysis between activation events and 90-day retention. That work can't live in an artifact. It lives in a person on the team.
+                The Aha! moments above are hypotheses. Validating them requires embedded access to customer data, conversations with the activation manager about where onboarding stalls, and correlation analysis between activation events and 90-day retention. That work can't live in an artifact. It lives in a person on the team.
               </div>
               <div style={{ marginBottom: 14 }}>
-                <span style={{ color: C.text }}>The CAM can't build this while doing the human work.</span>{" "}
-                The CAM will run concurrent onboarding implementations. They need someone whose entire scope is building the measurement layer underneath — so when the playbook is written, the product team knows what to automate next. That's a scoped, time-bound project. An intern is the right-sized investment.
+                <span style={{ color: C.text }}>The activation manager can't build this while doing the human work.</span>{" "}
+                They're running concurrent onboarding implementations. They need someone whose entire scope is building the measurement layer underneath — so when the playbook is written, the product team knows what to automate next. That's a scoped, time-bound project. An intern is the right-sized investment.
               </div>
               <div style={{ marginBottom: 14 }}>
                 <span style={{ color: C.text }}>I've done this work before.</span>{" "}
