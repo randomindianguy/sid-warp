@@ -216,42 +216,14 @@ export default function WarpThesis() {
         </Fade>
 
         <Fade delay={0.35}>
-          <div style={{ background: C.card, border: `1px solid ${C.border}`, borderRadius: 10, padding: "28px 24px", marginTop: 16 }}>
-            <div style={{ fontFamily: F.sans, fontSize: 18, fontWeight: 600, color: C.text, marginBottom: 4 }}>Get Started</div>
-            <div style={{ fontFamily: F.sans, fontSize: 13, color: C.dim, marginBottom: 20 }}>Answer a couple quick questions and you're in.</div>
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 8, marginBottom: 6 }}>
-              <FormField text="Work email" />
-              <FormField text="Company name" />
-            </div>
-            <FormField text="Company size" />
-            <div style={{ fontFamily: F.sans, fontSize: 12, color: C.dim, marginTop: 16, marginBottom: 8 }}>What can we help you with?</div>
-            {["Payroll", "HR / Onboarding", "Health Benefits", "State Tax Automation", "Global Contractors"].map((item) => (
-              <div key={item} style={{ background: "#0C0C0C", border: `1px solid ${C.border}`, borderRadius: 5, padding: "8px 12px", fontFamily: F.sans, fontSize: 13, color: C.muted, marginBottom: 5 }}>{item}</div>
-            ))}
-            <div style={{ fontFamily: F.sans, fontSize: 12, color: C.dim, marginTop: 16, marginBottom: 6 }}>How do you run payroll today?</div>
-            <FormField text="Select your current payroll solution" />
-            <div style={{ fontFamily: F.sans, fontSize: 12, color: C.dim, marginTop: 12, marginBottom: 6 }}>Are you looking to make a switch immediately?</div>
-            <FormField text="Select" />
-            <FormField text="Full name" />
-            <div style={{ fontFamily: F.mono, fontSize: 10, color: C.dim, marginTop: 14 }}>URL: warp.co/qualification (identical regardless of entry point)</div>
-          </div>
-        </Fade>
-
-        <Fade delay={0.4}>
           <Callout>
             The founder who just internalized $15K in penalty risk arrives at the same generic form as someone who clicked "Get Started" from the homepage. The URL is identical. No fields are pre-populated. The motivation the calendar built doesn't carry forward.
           </Callout>
         </Fade>
 
-        <Fade delay={0.45}>
-          <P style={{ marginTop: 24 }}>
-            The calendar does Motivation, Ability, and Trigger work for the compliance persona. The form does none. Whether the signal gets reconstructed later by a human is possible. But the product doesn't carry it.
-          </P>
-        </Fade>
-
         {/* BEFORE / AFTER FORM MOCKUP */}
-        <Fade delay={0.5}>
-          <div style={{ marginTop: 48 }}>
+        <Fade delay={0.4}>
+          <div style={{ marginTop: 36 }}>
             <div style={{ fontFamily: F.mono, fontSize: 10, letterSpacing: "0.12em", textTransform: "uppercase", color: C.accent, marginBottom: 20 }}>What if the signal carried forward?</div>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 20 }}>
 
@@ -298,12 +270,6 @@ export default function WarpThesis() {
 
         <Fade delay={0.55}>
           <P style={{ marginTop: 28 }}>
-            The left form collects data. The right form continues the conversation. The headline mirrors the calendar's language. The fields are compliance-relevant. The deadline reminder carries the motivation forward. And the UTM parameter means every downstream metric can be segmented by entry point.
-          </P>
-        </Fade>
-
-        <Fade delay={0.6}>
-          <P style={{ marginTop: 12 }}>
             This isn't specific to the compliance calendar. The same pattern applies to every free tool:
           </P>
           <div style={{ background: C.card, border: `1px solid ${C.border}`, borderRadius: 10, padding: "20px", marginTop: 16, overflowX: "auto" }}>
@@ -399,15 +365,6 @@ export default function WarpThesis() {
         </Fade>
 
         <Fade delay={0.1}>
-          <div style={{ background: C.card, border: `1px solid ${C.border}`, borderRadius: 8, padding: "20px 24px", marginBottom: 28 }}>
-            <div style={{ fontFamily: F.mono, fontSize: 10, color: C.dim, letterSpacing: "0.12em", textTransform: "uppercase", marginBottom: 8 }}>From the Customer Activation Manager JD</div>
-            <div style={{ fontFamily: F.serif, fontSize: 19, fontStyle: "italic", color: C.text, lineHeight: 1.5 }}>
-              "A customer isn't done onboarding when their first payroll runs. They're done when they're genuinely set up to succeed."
-            </div>
-          </div>
-        </Fade>
-
-        <Fade delay={0.15}>
           <P>The activation role's KPIs were defined as time to first payroll and graduation rate. But the JD itself said first payroll is not activation. That tension exists because the Aha! moment is different for each customer segment, and one metric cannot capture all of them:</P>
         </Fade>
 
