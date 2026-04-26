@@ -5,8 +5,8 @@ const C = {
   card: "#161413",
   cardHover: "#1E1B19",
   text: "#F0EBE3",
-  muted: "#9B8E82",
-  dim: "#6B6058",
+  muted: "#B8ADA3",
+  dim: "#8A7E72",
   accent: "#D94F2B",
   glow: "rgba(217, 79, 43, 0.12)",
   border: "#2A2520",
@@ -147,7 +147,7 @@ export default function WarpThesis() {
         <Fade>
           <Tag>01 / Entry Points</Tag>
           <Title>Six tools, eight industries, five roles. One qualification form.</Title>
-          <P>Warp's website now segments aggressively: six free tools, solution pages by size (Startup to Enterprise), by role (CEO to Payroll Admin), and by industry (Technology to Defense & Aerospace). Each attracts a different persona with a different pain. Here are three of the six tools — click each to see the signal it carries.</P>
+          <P>Warp's website now segments aggressively: six free tools, solution pages by size (Startup to Enterprise), by role (CEO to Payroll Admin), and by industry (Technology to Defense & Aerospace). Each attracts a different persona with a different pain. Here are three of the six tools. Click each to see the signal it carries.</P>
         </Fade>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 16, marginTop: 36 }}>
           <PersonaCard
@@ -312,7 +312,7 @@ export default function WarpThesis() {
 
         <Fade delay={0.1}>
           <P>
-            Warp publishes live support stats: 1-minute median response time, dedicated Slack channel per customer, 5/5 CSAT. Every customer gets a human who knows their name. This is exceptional — and for Enterprise and Mid-Market customers, it's the right model.
+            Warp publishes live support stats: 1-minute median response time, dedicated Slack channel per customer, 5/5 CSAT. Every customer gets a human who knows their name. This is exceptional, and for Enterprise and Mid-Market customers, it's the right model.
           </P>
           <P>
             But Warp now serves four segments explicitly: Startups, Small Business, Mid-Market, and Enterprise. The majority of 1,000+ existing customers are startups and small businesses at $35/employee/month. For these segments, people as the primary activation lever creates a cost structure that doesn't match the unit economics.
@@ -344,13 +344,13 @@ export default function WarpThesis() {
             Look at what the activation role's JD described before it was filled internally: data migration, tax registration setup, bank verification, stakeholder engagement, post-go-live training. Every step that enables first payroll. Each one is currently delivered by a person. For Enterprise customers, that makes sense. For startups at $35/employee, the question is which of them can be delivered by product instead.
           </P>
           <P>
-            The compliance calendar — a free marketing page — accidentally proves it can. Product does motivation, ability, and trigger work at zero marginal cost. The question is whether that principle extends past the marketing site into the actual customer experience for the segments where unit economics demand it.
+            The compliance calendar, a free marketing page, accidentally proves it can. Product does motivation, ability, and trigger work at zero marginal cost. The question is whether that principle extends past the marketing site into the actual customer experience for the segments where unit economics demand it.
           </P>
         </Fade>
 
         <Fade delay={0.35}>
           <Callout>
-            People as a lever is the right choice for Enterprise and Mid-Market segments. The original JD for this role (no longer live) described "a playbook that's still being written." But for Startups and Small Business — where many of the existing customers sit — the playbook's insight should transfer from people to product. Otherwise scaling the startup customer base requires proportionally more human attention, and the economics that let Warp undercut Gusto and Rippling on price start to compress.
+            People as a lever is the right choice for Enterprise and Mid-Market segments. The original JD for this role (no longer live) described "a playbook that's still being written." But for Startups and Small Business, where many of the existing customers sit, the playbook's insight should transfer from people to product. Otherwise scaling the startup customer base requires proportionally more human attention, and the economics that let Warp undercut Gusto and Rippling on price start to compress.
           </Callout>
         </Fade>
       </div>
@@ -369,7 +369,7 @@ export default function WarpThesis() {
         </Fade>
 
         <div style={{ marginTop: 24 }}>
-          <div style={{ fontFamily: F.mono, fontSize: 10, letterSpacing: "0.12em", textTransform: "uppercase", color: C.dim, marginBottom: 12 }}>Hypothesized segments — to be validated with customer data</div>
+          <div style={{ fontFamily: F.mono, fontSize: 10, letterSpacing: "0.12em", textTransform: "uppercase", color: C.dim, marginBottom: 12 }}>Hypothesized segments / to be validated with customer data</div>
           {[
             { persona: "Compliance Founder", action: "First payroll runs", aha: "First quarter with zero penalty notices", timing: "~90 days" },
             { persona: "Payroll Founder", action: "First payroll runs", aha: "Forgot payroll existed this month", timing: "~60 days" },
@@ -395,7 +395,7 @@ export default function WarpThesis() {
 
         <Fade delay={0.4}>
           <Callout color={C.green}>
-            First payroll is a valid proxy for activation — for segments where payroll speed is the value. But for compliance founders, the proxy should be notice-free periods. For scale founders, it should be frictionless multi-state expansion. One proxy applied uniformly across all segments means you are predicting retention accurately for some customers and blindly for others.
+            First payroll is a valid proxy for activation for segments where payroll speed is the value. But for compliance founders, the proxy should be notice-free periods. For scale founders, it should be frictionless multi-state expansion. One proxy applied uniformly across all segments means you are predicting retention accurately for some customers and blindly for others.
           </Callout>
         </Fade>
 
@@ -433,7 +433,7 @@ export default function WarpThesis() {
 
         <Fade delay={0.55}>
           <P style={{ marginTop: 24 }}>
-            The form captures the signal. The scorecard makes it actionable. Instead of one graduation criteria for all customers, the activation manager sees different targets for different segments — and the product team gets a feedback loop showing which milestones are hardest to reach.
+            The form captures the signal. The scorecard makes it actionable. Instead of one graduation criteria for all customers, the activation manager sees different targets for different segments, and the product team gets a feedback loop showing which milestones are hardest to reach.
           </P>
         </Fade>
       </div>
@@ -449,10 +449,10 @@ export default function WarpThesis() {
 
         <Fade delay={0.1}>
           <P>
-            The JD for the activation role is no longer live, and the careers page now lists a Senior Customer Activation Manager — suggesting the role was filled internally. The human work is covered. But the measurement layer — tracking where customers came from, defining what "activated" means for each segment, and testing whether different onboarding paths work better — is a different skillset. The underlying question is whether Warp's growth model transitions from people-powered (linear cost per customer) to product-powered (zero marginal cost) before the unit economics at $35/employee force it.
+            The JD for the activation role is no longer live, and the careers page now lists a Senior Customer Activation Manager, suggesting the role was filled internally. The human work is covered. But the measurement layer (tracking where customers came from, defining what "activated" means for each segment, and testing whether different onboarding paths work better) is a different skillset. The underlying question is whether Warp's growth model transitions from people-powered (linear cost per customer) to product-powered (zero marginal cost) before the unit economics at $35/employee force it.
           </P>
           <P>
-            The activation manager does the onboarding work. The intern builds the data layer underneath — so the product team knows what to automate next.
+            The activation manager does the onboarding work. The intern builds the data layer underneath so the product team knows what to automate next.
           </P>
         </Fade>
 
@@ -483,7 +483,7 @@ export default function WarpThesis() {
               </div>
               <div style={{ marginBottom: 14 }}>
                 <span style={{ color: C.text }}>Deep in this market.</span>{" "}
-                Built a product thesis for Gusto — one of the companies your customers are actively leaving (<a href="https://gusto-pulse.vercel.app" target="_blank" rel="noopener noreferrer" style={{ color: C.accent, textDecoration: "underline", textUnderlineOffset: 3 }}>see it here</a>). Evaluated and turned down a role at another early-stage payroll startup after building their growth strategy. Chose to pitch Warp because the AI-agent architecture is a different bet entirely.
+                Built a product thesis for Gusto, one of the companies your customers are actively leaving (<a href="https://gusto-pulse.vercel.app" target="_blank" rel="noopener noreferrer" style={{ color: C.accent, textDecoration: "underline", textUnderlineOffset: 3 }}>see it here</a>). Evaluated and turned down a role at another early-stage payroll startup after building their growth strategy. Chose to pitch Warp because the AI-agent architecture is a different bet entirely.
               </div>
               <div>
                 <span style={{ color: C.text }}>On CPT through Purdue.</span>{" "}
