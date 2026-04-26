@@ -90,7 +90,7 @@ function PersonaCard({ tag, tagColor, title, jtbd, signal, aha, delay = 0 }) {
               <div style={{ fontFamily: F.sans, fontSize: 14, color: C.muted, marginTop: 4 }}>{signal}</div>
             </div>
             <div>
-              <div style={{ fontFamily: F.mono, fontSize: 10, color: C.accent, letterSpacing: "0.1em", textTransform: "uppercase" }}>Their Aha! Moment</div>
+              <div style={{ fontFamily: F.mono, fontSize: 10, color: C.accent, letterSpacing: "0.1em", textTransform: "uppercase" }}>When they know it's working</div>
               <div style={{ fontFamily: F.serif, fontSize: 17, fontStyle: "italic", color: C.text, marginTop: 6 }}>{aha}</div>
             </div>
           </div>
@@ -129,7 +129,7 @@ export default function WarpThesis() {
           Your Compliance Calendar Is a Better Activator Than Your Onboarding
         </h1>
         <P style={{ fontSize: 17, marginBottom: 48 }}>
-          Warp has built a payroll product founders love, with support metrics most enterprise companies can't match. This artifact isn't a critique. It's a question about how the next 4,000 customers activate.
+          Warp has built a payroll product founders love, with support metrics most enterprise companies can't match. The question is how the next 4,000 customers activate.
         </P>
         <div style={{ fontFamily: F.sans, fontSize: 14, color: C.dim }}>
           by <span style={{ color: C.muted }}>Sidharth Sundaram</span>
@@ -197,9 +197,9 @@ export default function WarpThesis() {
 
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: 16, marginTop: 28 }}>
           {[
-            { label: "Motivation", color: C.accent, what: "Fear", detail: "Late W-2 = $3.5M. Missed 941 = 5%/mo compounding. One missed deadline = $15K+ for a 50-person startup." },
-            { label: "Ability", color: C.yellow, what: "Mental Effort Reduction", detail: "Every filing deadline organized by date, with state-by-state requirements pre-sorted. Reduces the mental effort of tracking 50 states from hours to a single scroll." },
-            { label: "Trigger", color: C.green, what: "Calendar Sync", detail: "\"Add to Google Calendar\" puts Warp's deadlines into the founder's daily workflow. A reminder they didn't ask for, showing up right when it matters." },
+            { label: "Why they care", color: C.accent, what: "Fear", detail: "Late W-2 = $3.5M. Missed 941 = 5%/mo compounding. One missed deadline = $15K+ for a 50-person startup. (Figures from Warp's own compliance calendar.)" },
+            { label: "Why it feels doable", color: C.yellow, what: "Removes the work", detail: "Every filing deadline organized by date, with state-by-state requirements pre-sorted. Tracking 50 states goes from hours to a single scroll." },
+            { label: "What brings them back", color: C.green, what: "Calendar Sync", detail: "\"Add to Google Calendar\" puts Warp's deadlines into the founder's daily workflow. A reminder they didn't ask for, showing up right when it matters." },
           ].map((item, i) => (
             <Fade key={i} delay={0.15 * i}>
               <div style={{ background: C.card, border: `1px solid ${C.border}`, borderRadius: 8, padding: "20px 18px" }}>
@@ -323,7 +323,7 @@ export default function WarpThesis() {
           <div style={{ background: C.card, border: `1px solid ${C.border}`, borderRadius: 8, padding: "24px", marginTop: 24 }}>
             <div style={{ fontFamily: F.mono, fontSize: 10, letterSpacing: "0.12em", textTransform: "uppercase", color: C.dim, marginBottom: 16 }}>Three Activation Levers</div>
             {[
-              { lever: "Product", desc: "Guide users, customize experience, improve supporting actions", fit: "Scales with customers. Zero marginal cost.", tag: "Startups / SMB", tagColor: C.green },
+              { lever: "Product", desc: "Guide users, customize experience, reduce steps to value", fit: "Scales with customers. Zero marginal cost.", tag: "Startups / SMB", tagColor: C.green },
               { lever: "Incentives", desc: "Free migration, first-month discounts, compliance guarantees", fit: "Scales with spend. Predictable marginal cost.", tag: "Mid-Market", tagColor: C.yellow },
               { lever: "People", desc: "Dedicated Slack, 1-min response, white-glove onboarding", fit: "High-touch. Linear cost per customer.", tag: "Enterprise", tagColor: C.accent },
             ].map((item, i) => (
@@ -341,7 +341,7 @@ export default function WarpThesis() {
 
         <Fade delay={0.3}>
           <P style={{ marginTop: 28 }}>
-            Look at what the activation role's JD described before it was filled internally: data migration, tax registration setup, bank verification, stakeholder engagement, post-go-live training. In activation framework terms, these are all supporting actions — the steps that enable the core action (first payroll) by providing awareness, discovery, motivation, and ability. For Enterprise customers, delivering these through people makes sense. For startups at $35/employee, the question is which of them can be delivered by product instead.
+            Look at what the activation role's JD described before it was filled internally: data migration, tax registration setup, bank verification, stakeholder engagement, post-go-live training. Every step that enables first payroll. Each one is currently delivered by a person. For Enterprise customers, that makes sense. For startups at $35/employee, the question is which of them can be delivered by product instead.
           </P>
           <P>
             The compliance calendar — a free marketing page — accidentally proves it can. Product does motivation, ability, and trigger work at zero marginal cost. The question is whether that principle extends past the marketing site into the actual customer experience for the segments where unit economics demand it.
@@ -350,7 +350,7 @@ export default function WarpThesis() {
 
         <Fade delay={0.35}>
           <Callout>
-            This is not a criticism. People as a lever is the right choice when you are learning what activation looks like, and it remains the right choice for Enterprise and Mid-Market segments. The original JD for this role said "this role owns a playbook that's still being written." But for Startups and Small Business — where the majority of customers sit today — the playbook's insight should transfer from people to product. Otherwise scaling the startup customer base requires proportionally more human attention, and the economics that let Warp undercut Gusto and Rippling on price start to compress.
+            People as a lever is the right choice for Enterprise and Mid-Market segments. The original JD for this role (no longer live) described "a playbook that's still being written." But for Startups and Small Business — where many of the existing customers sit — the playbook's insight should transfer from people to product. Otherwise scaling the startup customer base requires proportionally more human attention, and the economics that let Warp undercut Gusto and Rippling on price start to compress.
           </Callout>
         </Fade>
       </div>
@@ -365,10 +365,11 @@ export default function WarpThesis() {
         </Fade>
 
         <Fade delay={0.1}>
-          <P>The activation role's KPIs were defined as time to first payroll and graduation rate. But the JD itself said first payroll is not activation. That tension exists because the Aha! moment is different for each customer segment, and one metric cannot capture all of them:</P>
+          <P>The activation role's KPIs (from the JD, no longer live) were defined as time to first payroll and graduation rate. But the JD itself said first payroll is not activation. That tension exists because different customer segments have different definitions of "this product is working for me":</P>
         </Fade>
 
         <div style={{ marginTop: 24 }}>
+          <div style={{ fontFamily: F.mono, fontSize: 10, letterSpacing: "0.12em", textTransform: "uppercase", color: C.dim, marginBottom: 12 }}>Hypothesized segments — to be validated with customer data</div>
           {[
             { persona: "Compliance Founder", action: "First payroll runs", aha: "First quarter with zero penalty notices", timing: "~90 days" },
             { persona: "Payroll Founder", action: "First payroll runs", aha: "Forgot payroll existed this month", timing: "~60 days" },
@@ -379,11 +380,11 @@ export default function WarpThesis() {
               <div style={{ display: "grid", gridTemplateColumns: "120px 1fr 1fr", gap: 12, padding: "16px 0", borderBottom: `1px solid ${C.border}`, alignItems: "start" }}>
                 <div style={{ fontFamily: F.mono, fontSize: 11, color: C.accent }}>{item.persona}</div>
                 <div>
-                  <div style={{ fontFamily: F.mono, fontSize: 10, color: C.dim, marginBottom: 3 }}>CORE ACTION</div>
+                  <div style={{ fontFamily: F.mono, fontSize: 10, color: C.dim, marginBottom: 3 }}>WHAT WARP MEASURES</div>
                   <div style={{ fontFamily: F.sans, fontSize: 14, color: C.dim, textDecoration: "line-through", opacity: 0.5 }}>{item.action}</div>
                 </div>
                 <div>
-                  <div style={{ fontFamily: F.mono, fontSize: 10, color: C.green, marginBottom: 3 }}>AHA! MOMENT</div>
+                  <div style={{ fontFamily: F.mono, fontSize: 10, color: C.green, marginBottom: 3 }}>WHAT "ACTIVATED" MEANS TO THEM</div>
                   <div style={{ fontFamily: F.serif, fontSize: 15, fontStyle: "italic", color: C.text }}>{item.aha}</div>
                   <div style={{ fontFamily: F.mono, fontSize: 10, color: C.dim, marginTop: 3 }}>{item.timing}</div>
                 </div>
@@ -394,7 +395,7 @@ export default function WarpThesis() {
 
         <Fade delay={0.4}>
           <Callout color={C.green}>
-            First payroll is a valid leading indicator of activation — for segments where payroll speed is the value. But for compliance founders, the leading indicator should be notice-free periods. For scale founders, it should be frictionless multi-state expansion. One leading indicator applied uniformly across all segments means you are predicting retention accurately for some customers and blindly for others.
+            First payroll is a valid proxy for activation — for segments where payroll speed is the value. But for compliance founders, the proxy should be notice-free periods. For scale founders, it should be frictionless multi-state expansion. One proxy applied uniformly across all segments means you are predicting retention accurately for some customers and blindly for others.
           </Callout>
         </Fade>
 
@@ -432,7 +433,7 @@ export default function WarpThesis() {
 
         <Fade delay={0.55}>
           <P style={{ marginTop: 24 }}>
-            The form captures the signal. The scorecard makes it actionable. Instead of one graduation criteria for all customers, the activation manager sees different targets for different segments — and the product team gets a feedback loop showing which Aha! moments are hardest to reach.
+            The form captures the signal. The scorecard makes it actionable. Instead of one graduation criteria for all customers, the activation manager sees different targets for different segments — and the product team gets a feedback loop showing which milestones are hardest to reach.
           </P>
         </Fade>
       </div>
@@ -443,22 +444,22 @@ export default function WarpThesis() {
       <div style={{ ...wrap, paddingBottom: 120 }}>
         <Fade>
           <Tag>05 / The Proposal</Tag>
-          <Title>The activation role is filled. The measurement layer underneath it isn't.</Title>
+          <Title>The activation role appears filled. The measurement layer underneath it isn't.</Title>
         </Fade>
 
         <Fade delay={0.1}>
           <P>
-            Warp recently filled the activation role internally. The human work is covered. But the measurement layer — tracking where customers came from, defining what "activated" means for each segment, and testing whether different onboarding paths work better — is a different skillset. The underlying question is whether Warp's growth model transitions from people-powered (linear cost per customer) to product-powered (zero marginal cost) before the unit economics at $35/employee force it.
+            The JD for the activation role is no longer live, and the careers page now lists a Senior Customer Activation Manager — suggesting the role was filled internally. The human work is covered. But the measurement layer — tracking where customers came from, defining what "activated" means for each segment, and testing whether different onboarding paths work better — is a different skillset. The underlying question is whether Warp's growth model transitions from people-powered (linear cost per customer) to product-powered (zero marginal cost) before the unit economics at $35/employee force it.
           </P>
           <P>
-            This internship runs alongside the activation manager, not instead of them. They provide the supporting actions. The intern builds the data layer underneath — so the product team knows what to automate next.
+            The activation manager does the onboarding work. The intern builds the data layer underneath — so the product team knows what to automate next.
           </P>
         </Fade>
 
         <div style={{ marginTop: 32 }}>
           {[
             { num: "01", title: "Tag", desc: "Carry the entry-point signal from free tools and comparison pages into the qualification form. When a founder clicks 'Get Started' from the compliance calendar, that context should arrive with them. One UTM parameter. Everything downstream becomes segmentable." },
-            { num: "02", title: "Instrument", desc: "Give the activation manager a way to record which Aha! moment each customer reaches first, and how long it takes. Time to first payroll is one metric. Time to first quarter without a compliance notice is another. Build the segmented scorecard the original JD implied but didn't specify." },
+            { num: "02", title: "Instrument", desc: "Give the activation manager a way to record which milestone each customer reaches first, and how long it takes. Time to first payroll is one metric. Time to first quarter without a compliance notice is another. Build the segmented scorecard the original JD implied but didn't specify." },
             { num: "03", title: "Test", desc: "Route compliance-calendar leads into a compliance-first onboarding emphasis. Measure if graduation rate and 90-day retention differ from the generic path. One segment, one experiment over the summer." },
           ].map((item, i) => (
             <Fade key={i} delay={0.12 * i}>
@@ -475,19 +476,10 @@ export default function WarpThesis() {
 
         <Fade delay={0.4}>
           <div style={{ marginTop: 56, padding: "28px", background: C.card, border: `1px solid ${C.border}`, borderRadius: 10 }}>
-            <div style={{ fontFamily: F.mono, fontSize: 10, letterSpacing: "0.12em", textTransform: "uppercase", color: C.dim, marginBottom: 20 }}>Why an Intern, and Why This One</div>
             <div style={{ fontFamily: F.sans, fontSize: 15, color: C.muted, lineHeight: 1.85 }}>
               <div style={{ marginBottom: 14 }}>
-                <span style={{ color: C.text }}>This artifact is the diagnosis. The work is the iteration.</span>{" "}
-                The Aha! moments above are hypotheses. Validating them requires embedded access to customer data, conversations with the activation manager about where onboarding stalls, and checking whether different activation events actually predict who stays at 90 days. That work can't live in an artifact. It lives in a person on the team.
-              </div>
-              <div style={{ marginBottom: 14 }}>
-                <span style={{ color: C.text }}>The activation manager can't build this while doing the human work.</span>{" "}
-                They're running concurrent onboarding implementations. They need someone whose entire scope is building the measurement layer underneath — so when the playbook is written, the product team knows what to automate next. That's a scoped, time-bound project. An intern can own it.
-              </div>
-              <div style={{ marginBottom: 14 }}>
-                <span style={{ color: C.text }}>I've done this work before.</span>{" "}
-                4 years of B2B product at Interview Kickstart: launched a 0-to-1 corporate training vertical, ran activation experiments that moved conversion at scale, exceeded pilot revenue targets. Formally trained on the frameworks used throughout this artifact — not familiar with the language, trained on the methodology with evaluated coursework.
+                <span style={{ color: C.text }}>4 years of B2B product.</span>{" "}
+                Launched a 0-to-1 corporate training vertical at Interview Kickstart. Ran activation experiments that moved conversion at scale. Purdue MS Engineering Management.
               </div>
               <div style={{ marginBottom: 14 }}>
                 <span style={{ color: C.text }}>Deep in this market.</span>{" "}
