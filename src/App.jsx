@@ -5,8 +5,8 @@ const C = {
   card: "#161413",
   cardHover: "#1E1B19",
   text: "#F0EBE3",
-  muted: "#B8ADA3",
-  dim: "#8A7E72",
+  muted: "#E0DAD4",
+  dim: "#9B9189",
   accent: "#D94F2B",
   glow: "rgba(217, 79, 43, 0.12)",
   border: "#2A2520",
@@ -70,37 +70,6 @@ function Divider() {
   return <div style={{ width: 40, height: 1, background: C.border, margin: "80px 0" }} />;
 }
 
-function PersonaCard({ tag, tagColor, title, jtbd, signal, aha, delay = 0 }) {
-  const [open, setOpen] = useState(false);
-  return (
-    <Fade delay={delay}>
-      <div onClick={() => setOpen(!open)} style={{
-        background: open ? C.cardHover : C.card,
-        border: `1px solid ${open ? C.borderL : C.border}`,
-        borderRadius: 8, padding: "24px 20px", cursor: "pointer",
-        transition: "all 0.3s ease",
-      }}>
-        <div style={{ fontFamily: F.mono, fontSize: 10, letterSpacing: "0.12em", textTransform: "uppercase", color: tagColor || C.dim, marginBottom: 14 }}>{tag}</div>
-        <div style={{ fontFamily: F.serif, fontSize: 20, fontStyle: "italic", color: C.text, marginBottom: 6 }}>{title}</div>
-        <div style={{ fontFamily: F.sans, fontSize: 14, color: C.muted, fontStyle: "italic" }}>"{jtbd}"</div>
-        {open && (
-          <div style={{ borderTop: `1px solid ${C.border}`, paddingTop: 16, marginTop: 16 }}>
-            <div style={{ marginBottom: 14 }}>
-              <div style={{ fontFamily: F.mono, fontSize: 10, color: C.dim, letterSpacing: "0.1em", textTransform: "uppercase" }}>Entry Signal</div>
-              <div style={{ fontFamily: F.sans, fontSize: 14, color: C.muted, marginTop: 4 }}>{signal}</div>
-            </div>
-            <div>
-              <div style={{ fontFamily: F.mono, fontSize: 10, color: C.accent, letterSpacing: "0.1em", textTransform: "uppercase" }}>When they know it's working</div>
-              <div style={{ fontFamily: F.serif, fontSize: 17, fontStyle: "italic", color: C.text, marginTop: 6 }}>{aha}</div>
-            </div>
-          </div>
-        )}
-        {!open && <div style={{ fontFamily: F.mono, fontSize: 10, color: C.dim, marginTop: 12, opacity: 0.5 }}>Click to expand</div>}
-      </div>
-    </Fade>
-  );
-}
-
 function FormField({ text }) {
   return <div style={{ background: "#0C0C0C", border: `1px solid ${C.border}`, borderRadius: 5, padding: "8px 12px", fontFamily: F.sans, fontSize: 12, color: C.dim, marginBottom: 6 }}>{text}</div>;
 }
@@ -126,10 +95,10 @@ export default function WarpThesis() {
         </div>
 
         <h1 style={{ fontFamily: F.serif, fontSize: "clamp(36px,6vw,56px)", fontWeight: 400, fontStyle: "italic", lineHeight: 1.08, color: C.text, marginBottom: 28 }}>
-          Your Compliance Calendar Is a Better Activator Than Your Onboarding
+          Warp's growth team measures who comes in. The CS team measures who stays. Nobody measures which customers actually activated and why.
         </h1>
         <P style={{ fontSize: 17, marginBottom: 48 }}>
-          Warp has built a payroll product founders love, with support metrics most enterprise companies can't match. The question is how the next 4,000 customers activate.
+          I'd build that layer. Here's the evidence, the plan, and how I'd know if I'm wrong.
         </P>
         <div style={{ fontFamily: F.sans, fontSize: 14, color: C.dim }}>
           by <span style={{ color: C.muted }}>Sidharth Sundaram</span>
@@ -142,87 +111,17 @@ export default function WarpThesis() {
         </div>
       </div>
 
-      {/* ============ 01 - ENTRY POINTS ============ */}
+      {/* ============ 01 - THE GAP ============ */}
       <div style={{ ...wrap, paddingTop: 40, paddingBottom: 60 }}>
         <Fade>
-          <Tag>01 / Entry Points</Tag>
+          <Tag>01 / The Evidence</Tag>
           <Title>Six tools, eight industries, five roles. One qualification form.</Title>
-          <P>Warp's website now segments aggressively: six free tools, solution pages by size (Startup to Enterprise), by role (CEO to Payroll Admin), and by industry (Technology to Defense & Aerospace). Each attracts a different persona with a different pain. Here are three of the six tools. Click each to see the signal it carries.</P>
-        </Fade>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 16, marginTop: 36 }}>
-          <PersonaCard
-            tag="Compliance" tagColor={C.accent}
-            title="Compliance Calendar"
-            jtbd="I cannot miss another filing deadline"
-            signal={"Fully ungated. No email capture. Shows $3.5M max penalties for late W-2s, $15K+ risk for a 50-person startup. Breaks down state-by-state complexity across NY, CA, TX, IL, FL + 46 more. Offers Google Calendar sync that puts Warp's brand in the founder's daily workflow."}
-            aha={"First quarter where they didn't think about a single deadline."}
-            delay={0}
-          />
-          <PersonaCard
-            tag="Fundraising" tagColor={C.yellow}
-            title="Runway Calculator"
-            jtbd="When does my startup run out of cash?"
-            signal="Ungated. No email captured. Payroll shows up as a burn-rate line item. This founder came thinking about money, not compliance."
-            aha={"Payroll cost became predictable and invisible."}
-            delay={0.1}
-          />
-          <PersonaCard
-            tag="Hiring" tagColor={C.green}
-            title="Offer Letter Generator"
-            jtbd="I need to send a compliant offer letter today"
-            signal="Ungated. The founder is actively hiring. They need payroll now, not eventually."
-            aha={"Sent an offer, onboarded the hire, and ran payroll without switching tools."}
-            delay={0.2}
-          />
-        </div>
-        <Fade delay={0.3}>
-          <P style={{ marginTop: 24, fontSize: 14, color: C.dim }}>
-            Plus: Equity Calculator, Sales Comp Calculator, Contractor Agreement Generator, Mosey migration page, 8 industry pages, 5 role pages, and competitor comparison pages for ADP, Gusto, Rippling, Paylocity, and others. Each generates a different signal about why the visitor arrived.
-          </P>
-        </Fade>
-      </div>
-
-      <div style={wrap}><Divider /></div>
-
-      {/* ============ 02 - THE ACCIDENTAL ACTIVATOR ============ */}
-      <div style={{ ...wrap, paddingBottom: 60 }}>
-        <Fade>
-          <Tag>02 / The Accidental Activator</Tag>
-          <Title>The compliance calendar is doing activation work. The qualification form is not.</Title>
-        </Fade>
-
-        <Fade delay={0.1}>
-          <P>Activation requires three conditions: sufficient motivation, sufficient ability, and a well-timed trigger. Look at what the compliance calendar does:</P>
-        </Fade>
-
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: 16, marginTop: 28 }}>
-          {[
-            { label: "Why they care", color: C.accent, what: "Fear", detail: "Late W-2 = $3.5M. Missed 941 = 5%/mo compounding. One missed deadline = $15K+ for a 50-person startup. (Figures from Warp's own compliance calendar.)" },
-            { label: "Why it feels doable", color: C.yellow, what: "Removes the work", detail: "Every filing deadline organized by date, with state-by-state requirements pre-sorted. Tracking 50 states goes from hours to a single scroll." },
-            { label: "What brings them back", color: C.green, what: "Calendar Sync", detail: "\"Add to Google Calendar\" puts Warp's deadlines into the founder's daily workflow. A reminder they didn't ask for, showing up right when it matters." },
-          ].map((item, i) => (
-            <Fade key={i} delay={0.15 * i}>
-              <div style={{ background: C.card, border: `1px solid ${C.border}`, borderRadius: 8, padding: "20px 18px" }}>
-                <div style={{ fontFamily: F.mono, fontSize: 10, letterSpacing: "0.12em", textTransform: "uppercase", color: item.color, marginBottom: 10 }}>{item.label}</div>
-                <div style={{ fontFamily: F.serif, fontSize: 18, fontStyle: "italic", color: C.text, marginBottom: 8 }}>{item.what}</div>
-                <div style={{ fontFamily: F.sans, fontSize: 13, color: C.muted, lineHeight: 1.65 }}>{item.detail}</div>
-              </div>
-            </Fade>
-          ))}
-        </div>
-
-        <Fade delay={0.3}>
-          <P style={{ marginTop: 32 }}>Now look at the qualification form the compliance calendar feeds into. The headline is feature-language ("Get Started") rather than benefit-language. The fields are generic. Nothing acknowledges why the founder arrived:</P>
-        </Fade>
-
-        <Fade delay={0.35}>
-          <Callout>
-            The founder who just internalized $15K in penalty risk arrives at the same generic form as someone who clicked "Get Started" from the homepage. The URL is identical. No fields are pre-populated. The motivation the calendar built doesn't carry forward.
-          </Callout>
+          <P>Warp's website segments aggressively: six free tools, solution pages by size (Startup to Enterprise), by role (CEO to Payroll Admin), and by industry (Technology to Defense & Aerospace). Each attracts a different persona with a different pain.</P>
+          <P>But warp.co/qualification is the same form no matter where someone clicks from. Same URL, same fields, same headline ("Get Started"). The signal about why someone arrived gets discarded before onboarding starts.</P>
         </Fade>
 
         {/* BEFORE / AFTER FORM MOCKUP */}
-        <Fade delay={0.4}>
+        <Fade delay={0.2}>
           <div style={{ marginTop: 36 }}>
             <div style={{ fontFamily: F.mono, fontSize: 10, letterSpacing: "0.12em", textTransform: "uppercase", color: C.accent, marginBottom: 20 }}>What if the signal carried forward?</div>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 20 }}>
@@ -268,9 +167,9 @@ export default function WarpThesis() {
           </div>
         </Fade>
 
-        <Fade delay={0.55}>
+        <Fade delay={0.3}>
           <P style={{ marginTop: 28 }}>
-            This isn't specific to the compliance calendar. The same pattern applies to every free tool:
+            The compliance calendar is one example. The same pattern applies to every free tool:
           </P>
           <div style={{ background: C.card, border: `1px solid ${C.border}`, borderRadius: 10, padding: "20px", marginTop: 16, overflowX: "auto" }}>
             <div style={{ minWidth: 520 }}>
@@ -303,166 +202,20 @@ export default function WarpThesis() {
 
       <div style={wrap}><Divider /></div>
 
-      {/* ============ 03 - THE LEVER MISMATCH ============ */}
+      {/* ============ 02 - WHAT I'D BUILD + VALIDATION ============ */}
       <div style={{ ...wrap, paddingBottom: 60 }}>
         <Fade>
-          <Tag>03 / The Lever Question</Tag>
-          <Title>The right lever depends on the segment.</Title>
+          <Tag>02 / What I'd Build</Tag>
+          <Title>Tag. Instrument. Test. And how I'd know if I'm wrong.</Title>
         </Fade>
 
-        <Fade delay={0.1}>
-          <P>
-            Warp publishes live support stats: 1-minute median response time, dedicated Slack channel per customer, 5/5 CSAT. Every customer gets a human who knows their name. This is exceptional, and for Enterprise and Mid-Market customers, it's the right model.
-          </P>
-          <P>
-            But Warp now serves four segments explicitly: Startups, Small Business, Mid-Market, and Enterprise. The majority of 1,000+ existing customers are startups and small businesses at $35/employee/month. For these segments, people as the primary activation lever creates a cost structure that doesn't match the unit economics.
-          </P>
-        </Fade>
-
-        <Fade delay={0.2}>
-          <div style={{ background: C.card, border: `1px solid ${C.border}`, borderRadius: 8, padding: "24px", marginTop: 24 }}>
-            <div style={{ fontFamily: F.mono, fontSize: 10, letterSpacing: "0.12em", textTransform: "uppercase", color: C.dim, marginBottom: 16 }}>Three Activation Levers</div>
-            {[
-              { lever: "Product", desc: "Guide users, customize experience, reduce steps to value", fit: "Scales with customers. Zero marginal cost.", tag: "Startups / SMB", tagColor: C.green },
-              { lever: "Incentives", desc: "Free migration, first-month discounts, compliance guarantees", fit: "Scales with spend. Predictable marginal cost.", tag: "Mid-Market", tagColor: C.yellow },
-              { lever: "People", desc: "Dedicated Slack, 1-min response, white-glove onboarding", fit: "High-touch. Linear cost per customer.", tag: "Enterprise", tagColor: C.accent },
-            ].map((item, i) => (
-              <div key={i} style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", padding: "14px 0", borderBottom: i < 2 ? `1px solid ${C.border}` : "none" }}>
-                <div style={{ flex: 1 }}>
-                  <div style={{ fontFamily: F.serif, fontSize: 17, fontStyle: "italic", color: C.text, marginBottom: 4 }}>{item.lever}</div>
-                  <div style={{ fontFamily: F.sans, fontSize: 13, color: C.muted }}>{item.desc}</div>
-                  <div style={{ fontFamily: F.sans, fontSize: 12, color: C.dim, marginTop: 4 }}>{item.fit}</div>
-                </div>
-                <span style={{ fontFamily: F.mono, fontSize: 10, color: item.tagColor, letterSpacing: "0.08em", whiteSpace: "nowrap", marginLeft: 16, marginTop: 4 }}>{item.tag}</span>
-              </div>
-            ))}
-          </div>
-        </Fade>
-
-        <Fade delay={0.3}>
-          <P style={{ marginTop: 28 }}>
-            Look at what the activation role's JD described before it was filled internally: data migration, tax registration setup, bank verification, stakeholder engagement, post-go-live training. Every step that enables first payroll. Each one is currently delivered by a person. For Enterprise customers, that makes sense. For startups at $35/employee, the question is which of them can be delivered by product instead.
-          </P>
-          <P>
-            The compliance calendar, a free marketing page, accidentally proves it can. Product does motivation, ability, and trigger work at zero marginal cost. The question is whether that principle extends past the marketing site into the actual customer experience for the segments where unit economics demand it.
-          </P>
-        </Fade>
-
-        <Fade delay={0.35}>
-          <Callout>
-            People as a lever is the right choice for Enterprise and Mid-Market segments. The original JD for this role (no longer live) described "a playbook that's still being written." But for Startups and Small Business, where many of the existing customers sit, the playbook's insight should transfer from people to product. Otherwise scaling the startup customer base requires proportionally more human attention, and the economics that let Warp undercut Gusto and Rippling on price start to compress.
-          </Callout>
-        </Fade>
-      </div>
-
-      <div style={wrap}><Divider /></div>
-
-      {/* ============ 04 - THE MEASUREMENT GAP ============ */}
-      <div style={{ ...wrap, paddingBottom: 60 }}>
-        <Fade>
-          <Tag>04 / The Measurement Gap</Tag>
-          <Title>The metric says "activated." The customer isn't sure yet.</Title>
-        </Fade>
-
-        <Fade delay={0.1}>
-          <P>The activation role's KPIs (from the JD, no longer live) were defined as time to first payroll and graduation rate. But the JD itself said first payroll is not activation. That tension exists because different customer segments have different definitions of "this product is working for me":</P>
-        </Fade>
-
-        <div style={{ marginTop: 24 }}>
-          <div style={{ fontFamily: F.mono, fontSize: 10, letterSpacing: "0.12em", textTransform: "uppercase", color: C.dim, marginBottom: 12 }}>Hypothesized segments / to be validated with customer data</div>
+        <div style={{ marginTop: 16 }}>
           {[
-            { persona: "Compliance Founder", action: "First payroll runs", aha: "First quarter with zero penalty notices", timing: "~90 days" },
-            { persona: "Payroll Founder", action: "First payroll runs", aha: "Forgot payroll existed this month", timing: "~60 days" },
-            { persona: "Scale Founder", action: "First payroll runs", aha: "Hired in 3 new states, nothing broke", timing: "Variable" },
-            { persona: "Switcher", action: "First payroll runs", aha: "Output matches previous provider exactly", timing: "~30 days" },
-          ].map((item, i) => (
-            <Fade key={i} delay={0.08 * i}>
-              <div style={{ display: "grid", gridTemplateColumns: "120px 1fr 1fr", gap: 12, padding: "16px 0", borderBottom: `1px solid ${C.border}`, alignItems: "start" }}>
-                <div style={{ fontFamily: F.mono, fontSize: 11, color: C.accent }}>{item.persona}</div>
-                <div>
-                  <div style={{ fontFamily: F.mono, fontSize: 10, color: C.dim, marginBottom: 3 }}>WHAT WARP MEASURES</div>
-                  <div style={{ fontFamily: F.sans, fontSize: 14, color: C.dim, textDecoration: "line-through", opacity: 0.5 }}>{item.action}</div>
-                </div>
-                <div>
-                  <div style={{ fontFamily: F.mono, fontSize: 10, color: C.green, marginBottom: 3 }}>WHAT "ACTIVATED" MEANS TO THEM</div>
-                  <div style={{ fontFamily: F.serif, fontSize: 15, fontStyle: "italic", color: C.text }}>{item.aha}</div>
-                  <div style={{ fontFamily: F.mono, fontSize: 10, color: C.dim, marginTop: 3 }}>{item.timing}</div>
-                </div>
-              </div>
-            </Fade>
-          ))}
-        </div>
-
-        <Fade delay={0.4}>
-          <Callout color={C.green}>
-            First payroll is a valid proxy for activation for segments where payroll speed is the value. But for compliance founders, the proxy should be notice-free periods. For scale founders, it should be frictionless multi-state expansion. One proxy applied uniformly across all segments means you are predicting retention accurately for some customers and blindly for others.
-          </Callout>
-        </Fade>
-
-        {/* CAM SCORECARD MOCKUP */}
-        <Fade delay={0.5}>
-          <div style={{ marginTop: 48 }}>
-            <div style={{ fontFamily: F.mono, fontSize: 10, letterSpacing: "0.12em", textTransform: "uppercase", color: C.accent, marginBottom: 8 }}>Proposed / Activation Scorecard</div>
-            <div style={{ fontFamily: F.sans, fontSize: 13, color: C.dim, marginBottom: 20 }}>What the activation manager sees when activation is segmented by entry point.</div>
-            <div style={{ background: C.card, border: `1px solid ${C.border}`, borderRadius: 10, padding: "20px", overflowX: "auto" }}>
-              <div style={{ minWidth: 580 }}>
-                {/* Header */}
-                <div style={{ display: "grid", gridTemplateColumns: "100px 90px 1fr 1fr 60px", gap: 10, padding: "10px 0", borderBottom: `1px solid ${C.borderL}`, marginBottom: 4 }}>
-                  {["Customer", "Entry", "Graduation Criteria", "Status", "Day"].map((h) => (
-                    <div key={h} style={{ fontFamily: F.mono, fontSize: 9, letterSpacing: "0.1em", textTransform: "uppercase", color: C.dim }}>{h}</div>
-                  ))}
-                </div>
-                {[
-                  { name: "Acme Labs", entry: "Compliance Cal", entryColor: C.accent, criteria: "90 days, zero penalty notices", status: "Day 47 - 0 notices", statusColor: C.green, day: "47" },
-                  { name: "Nova AI", entry: "Runway Calc", entryColor: C.yellow, criteria: "2 payroll cycles < 5 min each", status: "1st cycle done (3 min)", statusColor: C.green, day: "22" },
-                  { name: "Helios Co", entry: "vs. Gusto page", entryColor: C.muted, criteria: "2 cycles matching prior provider", status: "Migration done, 1st pending", statusColor: C.yellow, day: "11" },
-                  { name: "Bolt Freight", entry: "Direct signup", entryColor: C.dim, criteria: "First payroll + stakeholder check", status: "Awaiting bank verification", statusColor: C.accent, day: "6" },
-                ].map((row, i) => (
-                  <div key={i} style={{ display: "grid", gridTemplateColumns: "100px 90px 1fr 1fr 60px", gap: 10, padding: "12px 0", borderBottom: i < 3 ? `1px solid ${C.border}` : "none", alignItems: "start" }}>
-                    <div style={{ fontFamily: F.sans, fontSize: 13, color: C.text }}>{row.name}</div>
-                    <div style={{ fontFamily: F.mono, fontSize: 10, color: row.entryColor }}>{row.entry}</div>
-                    <div style={{ fontFamily: F.sans, fontSize: 12, color: C.muted }}>{row.criteria}</div>
-                    <div style={{ fontFamily: F.sans, fontSize: 12, color: row.statusColor }}>{row.status}</div>
-                    <div style={{ fontFamily: F.mono, fontSize: 12, color: C.muted }}>{row.day}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </Fade>
-
-        <Fade delay={0.55}>
-          <P style={{ marginTop: 24 }}>
-            The form captures the signal. The scorecard makes it actionable. Instead of one graduation criteria for all customers, the activation manager sees different targets for different segments, and the product team gets a feedback loop showing which milestones are hardest to reach.
-          </P>
-        </Fade>
-      </div>
-
-      <div style={wrap}><Divider /></div>
-
-      {/* ============ 05 - THE PROPOSAL ============ */}
-      <div style={{ ...wrap, paddingBottom: 120 }}>
-        <Fade>
-          <Tag>05 / The Proposal</Tag>
-          <Title>The activation role appears filled. The measurement layer underneath it isn't.</Title>
-        </Fade>
-
-        <Fade delay={0.1}>
-          <P>
-            The JD for the activation role is no longer live, and the careers page now lists a Senior Customer Activation Manager, suggesting the role was filled internally. The human work is covered. But the measurement layer (tracking where customers came from, defining what "activated" means for each segment, and testing whether different onboarding paths work better) is a different skillset. The underlying question is whether Warp's growth model transitions from people-powered (linear cost per customer) to product-powered (zero marginal cost) before the unit economics at $35/employee force it.
-          </P>
-          <P>
-            The activation manager does the onboarding work. The intern builds the data layer underneath so the product team knows what to automate next.
-          </P>
-        </Fade>
-
-        <div style={{ marginTop: 32 }}>
-          {[
-            { num: "01", title: "Tag", desc: "Carry the entry-point signal from free tools and comparison pages into the qualification form. When a founder clicks 'Get Started' from the compliance calendar, that context should arrive with them. One UTM parameter. Everything downstream becomes segmentable." },
-            { num: "02", title: "Instrument", desc: "Give the activation manager a way to record which milestone each customer reaches first, and how long it takes. Time to first payroll is one metric. Time to first quarter without a compliance notice is another. Build the segmented scorecard the original JD implied but didn't specify." },
+            { num: "01", title: "Tag", desc: "Carry the entry-point signal into the qualification form. When a founder clicks 'Get Started' from the compliance calendar, that context should arrive with them. One UTM parameter. Everything downstream becomes segmentable." },
+            { num: "02", title: "Instrument", desc: "Build a scorecard that tracks different activation milestones per segment. Time to first payroll is one metric. Time to first quarter without a compliance notice is another. The activation manager gets segment-specific graduation criteria instead of one number for everyone." },
             { num: "03", title: "Test", desc: "Route compliance-calendar leads into a compliance-first onboarding emphasis. Measure if graduation rate and 90-day retention differ from the generic path. One segment, one experiment over the summer." },
           ].map((item, i) => (
-            <Fade key={i} delay={0.12 * i}>
+            <Fade key={i} delay={0.1 * i}>
               <div style={{ display: "flex", gap: 20, padding: "24px 0", borderBottom: i < 2 ? `1px solid ${C.border}` : "none" }}>
                 <div style={{ fontFamily: F.mono, fontSize: 12, color: C.accent, minWidth: 28, paddingTop: 2 }}>{item.num}</div>
                 <div>
@@ -475,27 +228,142 @@ export default function WarpThesis() {
         </div>
 
         <Fade delay={0.4}>
-          <div style={{ marginTop: 56, padding: "28px", background: C.card, border: `1px solid ${C.border}`, borderRadius: 10 }}>
+          <div style={{ marginTop: 48, padding: "24px", background: C.card, border: `1px solid ${C.border}`, borderRadius: 10 }}>
+            <div style={{ fontFamily: F.mono, fontSize: 10, letterSpacing: "0.12em", textTransform: "uppercase", color: C.green, marginBottom: 16 }}>How I'd validate</div>
             <div style={{ fontFamily: F.sans, fontSize: 15, color: C.muted, lineHeight: 1.85 }}>
               <div style={{ marginBottom: 14 }}>
-                <span style={{ color: C.text }}>4 years of B2B product.</span>{" "}
-                Launched a 0-to-1 corporate training vertical at Interview Kickstart. Ran activation experiments that moved conversion at scale. Purdue MS Engineering Management.
+                <span style={{ color: C.text }}>Week 1-2: Sit with the activation manager.</span>{" "}
+                Learn where onboarding actually stalls. Understand which customers require the most hand-holding and why. Check whether entry-point data already exists somewhere in the CRM but isn't being used.
               </div>
               <div style={{ marginBottom: 14 }}>
-                <span style={{ color: C.text }}>Deep in this market.</span>{" "}
-                Built a product thesis for Gusto, one of the companies your customers are actively leaving (<a href="https://gusto-pulse.vercel.app" target="_blank" rel="noopener noreferrer" style={{ color: C.accent, textDecoration: "underline", textUnderlineOffset: 3 }}>see it here</a>). Evaluated and turned down a role at another early-stage payroll startup after building their growth strategy. Chose to pitch Warp because the AI-agent architecture is a different bet entirely.
+                <span style={{ color: C.text }}>Week 3-4: Interview 10 customers per hypothesized segment.</span>{" "}
+                Ask: "When did you feel confident Warp was working for you?" If compliance founders and payroll founders give the same answer, the segmentation hypothesis is wrong. If they give different answers, the scorecard writes itself.
               </div>
               <div>
-                <span style={{ color: C.text }}>On CPT through Purdue.</span>{" "}
-                Standard employer cooperation letter, no sponsorship. Available this summer. NYC works.
+                <span style={{ color: C.text }}>Kill criteria.</span>{" "}
+                If compliance-first and payroll-first customers retain at the same rate after 90 days, the generic activation path is correct and segmentation isn't worth the complexity. That's a useful finding too. It means Warp can scale the current model with confidence instead of guessing.
               </div>
             </div>
           </div>
         </Fade>
 
         <Fade delay={0.5}>
+          <div style={{ marginTop: 24 }}>
+            <div style={{ fontFamily: F.mono, fontSize: 10, letterSpacing: "0.12em", textTransform: "uppercase", color: C.dim, marginBottom: 12 }}>Hypothesized segments / to be validated with customer data</div>
+            <div style={{ background: C.card, border: `1px solid ${C.border}`, borderRadius: 10, padding: "20px", overflowX: "auto" }}>
+              <div style={{ minWidth: 480 }}>
+                <div style={{ display: "grid", gridTemplateColumns: "120px 1fr 1fr", gap: 12, padding: "10px 0", borderBottom: `1px solid ${C.borderL}`, marginBottom: 4 }}>
+                  {["Segment", "What Warp measures", "What 'activated' means to them"].map((h) => (
+                    <div key={h} style={{ fontFamily: F.mono, fontSize: 9, letterSpacing: "0.1em", textTransform: "uppercase", color: C.dim }}>{h}</div>
+                  ))}
+                </div>
+                {[
+                  { persona: "Compliance", action: "First payroll runs", aha: "First quarter with zero penalty notices", timing: "~90 days" },
+                  { persona: "Payroll Speed", action: "First payroll runs", aha: "Forgot payroll existed this month", timing: "~60 days" },
+                  { persona: "Scale", action: "First payroll runs", aha: "Hired in 3 new states, nothing broke", timing: "Variable" },
+                  { persona: "Switcher", action: "First payroll runs", aha: "Output matches previous provider exactly", timing: "~30 days" },
+                ].map((item, i) => (
+                  <div key={i} style={{ display: "grid", gridTemplateColumns: "120px 1fr 1fr", gap: 12, padding: "14px 0", borderBottom: i < 3 ? `1px solid ${C.border}` : "none", alignItems: "start" }}>
+                    <div style={{ fontFamily: F.mono, fontSize: 11, color: C.accent }}>{item.persona}</div>
+                    <div>
+                      <div style={{ fontFamily: F.sans, fontSize: 14, color: C.dim, textDecoration: "line-through", opacity: 0.5 }}>{item.action}</div>
+                    </div>
+                    <div>
+                      <div style={{ fontFamily: F.serif, fontSize: 15, fontStyle: "italic", color: C.text }}>{item.aha}</div>
+                      <div style={{ fontFamily: F.mono, fontSize: 10, color: C.dim, marginTop: 3 }}>{item.timing}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </Fade>
+
+        <Fade delay={0.55}>
+          <Callout color={C.green}>
+            First payroll is a valid proxy for activation for segments where payroll speed is the value. But for compliance founders, the proxy should be notice-free periods. For scale founders, it should be frictionless multi-state expansion. One proxy applied uniformly means you're predicting retention accurately for some customers and guessing for others.
+          </Callout>
+        </Fade>
+      </div>
+
+      <div style={wrap}><Divider /></div>
+
+      {/* ============ 03 - SYSTEMS VIEW ============ */}
+      <div style={{ ...wrap, paddingBottom: 60 }}>
+        <Fade>
+          <Tag>03 / Why This Matters at Scale</Tag>
+          <Title>The missing feedback loop.</Title>
+        </Fade>
+
+        <Fade delay={0.1}>
+          <P>Warp has three stocks of customers. Visitors flow in through marketing and free tools. Customers flow in through the qualification form and sales. Activated customers flow in through onboarding.</P>
+          <P>The growth team optimizes the first flow. The CS team manages the last stock. But there's no feedback mechanism connecting activated customers back to the growth team. Nobody is asking: which visitors become the best-activated customers? Which entry points predict retention? Which segments fail to activate even though they complete first payroll?</P>
+          <P>Without that feedback loop, every team optimizes locally. The growth team drives more visitors without knowing which visitors retain. The activation manager onboards customers without data on which paths produce the best outcomes. The product team builds features without knowing which activation milestones matter most.</P>
+        </Fade>
+
+        <Fade delay={0.2}>
+          <div style={{ background: C.card, border: `1px solid ${C.border}`, borderRadius: 10, padding: "24px", marginTop: 24 }}>
+            <div style={{ fontFamily: F.mono, fontSize: 10, letterSpacing: "0.12em", textTransform: "uppercase", color: C.dim, marginBottom: 16 }}>What changes as Warp scales</div>
+            {[
+              { stage: "At 1,000 customers (now)", desc: "The activation manager can know every customer by name. High-touch onboarding works. The cost is manageable. But the data about what works and what doesn't lives in one person's head, not in a system.", color: C.green },
+              { stage: "At 5,000 customers", desc: "High-touch onboarding becomes the limiting factor. Each new customer requires proportionally more human attention. The economics at $35/employee start to compress unless the product carries more of the activation work. The measurement layer built this summer becomes the spec for what engineering automates.", color: C.yellow },
+              { stage: "At 10,000+ customers", desc: "Warp is already expanding upmarket (Enterprise, Mid-Market, 8 industry verticals). Each expansion requires different activation paths. The segmented measurement system is the foundation for every new segment they enter.", color: C.accent },
+            ].map((item, i) => (
+              <div key={i} style={{ padding: "16px 0", borderBottom: i < 2 ? `1px solid ${C.border}` : "none" }}>
+                <div style={{ fontFamily: F.mono, fontSize: 11, color: item.color, marginBottom: 6 }}>{item.stage}</div>
+                <div style={{ fontFamily: F.sans, fontSize: 14, color: C.muted, lineHeight: 1.75 }}>{item.desc}</div>
+              </div>
+            ))}
+          </div>
+        </Fade>
+
+        <Fade delay={0.3}>
+          <Callout>
+            The JD for the activation role is no longer live, and the careers page now lists a Senior Customer Activation Manager, suggesting the role was filled internally. The human work is covered. The measurement layer is a different skillset. A scoped summer project, not a permanent headcount decision.
+          </Callout>
+        </Fade>
+      </div>
+
+      <div style={wrap}><Divider /></div>
+
+      {/* ============ 04 - WHY ME ============ */}
+      <div style={{ ...wrap, paddingBottom: 120 }}>
+        <Fade>
+          <Tag>04 / Why Me</Tag>
+          <Title>Two patterns from my work that apply directly here.</Title>
+        </Fade>
+
+        <Fade delay={0.1}>
+          <div style={{ background: C.card, border: `1px solid ${C.border}`, borderRadius: 10, padding: "24px", marginBottom: 20 }}>
+            <div style={{ fontFamily: F.mono, fontSize: 10, color: C.accent, letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: 14 }}>Pattern 1: Eliminate, don't solve</div>
+            <div style={{ fontFamily: F.sans, fontSize: 15, color: C.muted, lineHeight: 1.85 }}>
+              At Interview Kickstart, sales reps couldn't explain AI courses on calls. The obvious fix was training. I rejected it because training is a recurring cost: every new hire, every new course, you retrain. Instead, I built expert videos where instructors explained value in their own words. A structural asset that works at 2 AM whether your best rep or newest hire is on the call. 14% conversion lift, roughly $200K in incremental revenue. The same pattern applies here. The obvious fix for activation is "hire more people." The structural fix is a measurement system that makes the right activation path visible to anyone, automatically.
+            </div>
+          </div>
+        </Fade>
+
+        <Fade delay={0.2}>
+          <div style={{ background: C.card, border: `1px solid ${C.border}`, borderRadius: 10, padding: "24px", marginBottom: 20 }}>
+            <div style={{ fontFamily: F.mono, fontSize: 10, color: C.yellow, letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: 14 }}>Pattern 2: Find the alignment, not the balance</div>
+            <div style={{ fontFamily: F.sans, fontSize: 15, color: C.muted, lineHeight: 1.85 }}>
+              Built Interview Kickstart's first B2B corporate training product from zero. The hard part wasn't the product. It was motivation: corporate learners check out when training feels imposed. Most teams try to "balance" what the company wants with what the learner wants. I found a segment where those are the same thing: IT services companies, where the engineer's technical interview IS the company's sales process. Upskilling directly helps both. 4.6/5 satisfaction on mandatory corporate training. Pilot exceeded revenue targets by 14%. This maps directly: Warp's growth team optimizes for pipeline volume. The CS team optimizes for customer retention. The intern finds where those align by identifying which entry points produce both the highest-quality leads AND the best-retaining customers.
+            </div>
+          </div>
+        </Fade>
+
+        <Fade delay={0.3}>
+          <div style={{ background: C.card, border: `1px solid ${C.border}`, borderRadius: 10, padding: "24px" }}>
+            <div style={{ fontFamily: F.mono, fontSize: 10, color: C.green, letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: 14 }}>Domain depth</div>
+            <div style={{ fontFamily: F.sans, fontSize: 15, color: C.muted, lineHeight: 1.85 }}>
+              Built a product thesis for Gusto, one of the companies your customers are actively leaving (<a href="https://gusto-pulse.vercel.app" target="_blank" rel="noopener noreferrer" style={{ color: C.accent, textDecoration: "underline", textUnderlineOffset: 3 }}>see it here</a>). Evaluated and turned down a role at another early-stage payroll startup after building their growth strategy. Chose to pitch Warp because the AI-agent architecture is a different bet entirely. Three companies in the same space. I understand this market from multiple competitive angles.
+            </div>
+          </div>
+        </Fade>
+
+        <Fade delay={0.4}>
           <div style={{ marginTop: 48, textAlign: "center" }}>
-            <div style={{ fontFamily: F.serif, fontSize: 24, fontStyle: "italic", color: C.text, marginBottom: 16 }}>Sidharth Sundaram</div>
+            <div style={{ fontFamily: F.serif, fontSize: 24, fontStyle: "italic", color: C.text, marginBottom: 8 }}>Sidharth Sundaram</div>
+            <div style={{ fontFamily: F.sans, fontSize: 13, color: C.dim, marginBottom: 16 }}>4 years B2B product in EdTech. Purdue MS. On CPT, no sponsorship. Available this summer. NYC works.</div>
             <div style={{ fontFamily: F.sans, fontSize: 14, color: C.muted, lineHeight: 2.2 }}>
               <a href="https://sidharthsundaram.com" style={{ color: C.muted, textDecoration: "underline", textUnderlineOffset: 3 }}>sidharthsundaram.com</a>
               <span style={{ margin: "0 10px", color: C.dim }}>|</span>
